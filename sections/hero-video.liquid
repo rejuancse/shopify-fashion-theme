@@ -1,0 +1,42 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="hero-video">
+                <video class="video-bg" poster='{{section.settings.banner_image | img_url: '100%'}}' muted autoplay webkit-playsinline playsinline loop>
+                    <source src="{{ section.settings.video_URL }}" type='video/mp4'>
+                </video>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    #shopify-section-hero-video {
+        line-height: 0;
+    }
+    .hero-video {
+        margin-top: 60px;
+    }
+    video.video-bg {
+        width: 100%;
+    }
+</style>
+
+{% schema %}
+    {
+        "name": "Hero Video",
+        "settings": [
+            {
+                "type": "text",
+                "id": "video_URL",
+                "label": "VIDEO URL",
+                "default": "https://cdn.shopify.com/videos/c/o/v/8a8e7b08ddff4a0ea62e08f90aeffe22.mp4"
+            },
+            {
+                "type": "image_picker",
+                "id": "banner_image",
+                "label": "Upload Banner Image"
+            }
+        ]
+    }
+{% endschema %}

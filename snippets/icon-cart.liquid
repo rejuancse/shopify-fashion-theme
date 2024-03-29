@@ -1,0 +1,48 @@
+<!-- Create a new file named icon-cart.liquid -->
+{%
+import {
+  CartIcon
+} from '@shopify/polaris-icons';
+%}
+
+    <li class="list-inline-item EE">
+        <a href="/cart">
+            <span class="icon icon--cart">
+                <Icon
+  source={CartIcon}
+  tone="base"
+/>
+                <i class="fa fa-shopping-cart"></i>
+                <span class="site-header__cart-count">{{ cart.item_count }}</span>
+            </span>
+        </a>
+    </li>
+
+
+{% comment %} <script>
+    $(document).ready(function() {
+        // Update cart on hover
+        $('#cart').load('/cart #cart', function() {
+        // Reinitialize any scripts that were in the updated content
+        });
+
+        // Handle adding items to cart
+        $('.add-to-cart').on('click', function(event) {
+        event.preventDefault();
+        var $addToCartForm = $(this).closest('form');
+        var formData = $addToCartForm.serialize();
+
+        $.ajax({
+            type: 'POST',
+            url: '/cart/add.js',
+            data: formData,
+            dataType: 'json',
+            success: function() {
+            $('#cart').load('/cart #cart', function() {
+                // Reinitialize any scripts that were in the updated content
+            });
+            }
+        });
+        });
+    });
+</script> {% endcomment %}

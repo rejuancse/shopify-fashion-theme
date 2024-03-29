@@ -1,0 +1,74 @@
+<section class="product-category">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="title text-center">
+                    <h2>{{ section.settings.collections_title }}</h2>
+                </div>
+            </div>
+
+            {%- for block in section.blocks -%}
+                <div class="col-md-6">
+                    <div class="category-box">
+                        <a href="{{block.settings.category_top_left_url}}">
+                            <img src="{{block.settings.category_top_left | img_url: '1920x'}}" alt="">
+                            <div class="content">
+                            <h3>{{block.settings.category_top_left_header}}</h3>
+                            <p>{{block.settings.category_top_left_text}}</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            {%- endfor -%}
+        </div>
+    </div>
+</section>
+
+{% schema %}
+  {
+    "name": "Product Category Banners",
+    "settings": [
+        {
+            "type": "text",
+            "id": "collections_title",
+            "default": "PRODUCT CATEGORY",
+            "label": "Collections Heading"
+        }
+    ],
+
+    "blocks": [{
+        "type": "collections",
+        "name": "Collections",
+        "settings": [
+            {
+                "type": "text",
+                "id": "category_top_left_header",
+                "default": "Dresses",
+                "label": "Category Top Left Header"
+            },
+            {
+                "type": "text",
+                "id": "category_top_left_text",
+                "default": "Sale!",
+                "label": "Category Top Left Text"
+            },
+            {
+                "type": "image_picker",
+                "id": "category_top_left",
+                "label": "Category Top Left"
+            },
+            {
+                "type": "url",
+                "id": "category_top_left_url",
+                "label": "Category Top Left Link"
+            }
+        ]
+    }],
+
+    "presets": [
+        {
+            "name": "Product Category Banners"
+        }
+    ]
+}
+{% endschema %}

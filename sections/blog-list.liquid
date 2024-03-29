@@ -1,0 +1,148 @@
+{%- assign blog = blogs[section.settings.blog] -%}
+
+<section class="blog">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="title text-center">
+                    <h2>{{ section.settings.title | escape }}</h2>
+                </div>
+            </div>
+
+            {%- if blog.articles_count > 0 -%}
+                {%- for article in blog.articles limit: section.settings.post_limit -%}
+                    <div class="col-sm-4">
+                        <div class="blog-list">
+                            {%- if article.image -%}
+                                {{ article | img_url: '150x150', scale: 2 | img_tag: '' }}
+                            {%- endif -%}
+
+                            <div class="blog-list-content">
+                                <div class="title rainbow">
+                                    <h2><a href="{{ article.url }}">{{ article.title }}</a></h2>
+                                    <p>
+                                        {%- if article.excerpt.size > 0 -%}
+                                            {{ article.excerpt }}
+                                        {%- else -%}
+                                            {{ article.content | strip_html | truncate: 150 }}
+                                        {%- endif -%}
+                                    </p>
+                                </div>
+                                <div class="blog-footer">
+                                    <b>
+                                        {%- if article.tags.size > 0 -%}
+                                            {%- for tag in article.tags -%}
+                                                <a href="{{ blog.url }}/tagged/{{ tag | handle }}">{{ tag }}</a>
+                                            {%- endfor -%}
+                                        {%- endif -%}
+                                    </b>
+
+                                    {%- if section.settings.blog_show_date -%}
+                                        <span>
+                                            <time datetime="{{ article.published_at | date: '%Y-%m-%dT%H:%M:%SZ' }}" class="date">{{ article.published_at | date: format: 'date' }}</time>
+                                        </span>
+                                    {%- endif -%}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {%- endfor -%}
+            {%- endif -%}
+        </div>
+    </div>
+</section>
+
+{% schema %}
+{
+  "name": "Blog posts",
+  "class": "index-section",
+    "settings": [
+        {
+            "type": "text",
+            "id": "title",
+            "label": "Heading",
+            "default": "Blog posts"
+        },
+        {
+            "id": "blog",
+            "type": "blog",
+            "label": "Blog"
+        },
+        {
+            "type": "range",
+            "id": "post_limit",
+            "label": "Posts",
+            "min": 3,
+            "max": 12,
+            "step": 3,
+            "default": 3
+        },
+        {
+            "type": "checkbox",
+            "id": "blog_show_date",
+            "label": "Show date",
+            "default": true
+        }
+    ],
+    "presets": [
+        {
+            "name": "Blog posts",
+            "category": "Blog",
+            "settings": {
+                "blog": "News",
+                "post_limit": 3
+            }
+        }
+    ]
+}
+{% endschema %}
+
+<style>
+    header.section-header.text-center {
+        margin-bottom: 70px;
+    }
+    .blog {
+        padding:40px 0;
+    }
+    .blog-list-content {
+        padding: 20px 25px;
+        background-color: #f5f8fa;
+        position: relative;
+        z-index: 1;
+        text-align: left;
+    }
+    .blog-footer{
+        padding: 15px 0 ;
+    }
+    .blog-list {
+        margin-bottom: 20px;
+        padding: 0px;
+        text-align: center;
+        box-shadow: 0 1px 4px 1px #00000024;
+    }
+    .blog-list img {
+        width: 100%;
+    }
+   .blog-list .title h2 {
+        line-height: 26px;
+        font-size: 18px;
+        text-align: left;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        padding: 0;
+        margin: 0 0 15px;
+    }
+    .blog-footer {
+        font-weight: 100;
+    }
+    .blog-footer span{
+        color:#bfbfbf; margin-left:15px;
+    }
+    .blog-list-content .title {
+        padding: 0;
+    }
+    .blog-list-content .title p{
+        padding: 0;
+        margin: 0;
+    }
+</style>

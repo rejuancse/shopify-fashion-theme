@@ -1,0 +1,263 @@
+{
+  "current": {
+    "about_img": "shopify:\/\/shop_images\/kids-beanie.jpg",
+    "address": "CB 50, Dhaka Cantonment",
+    "phone": "8801727424216",
+    "email": "rejuan.ahamed@cronixweb.com",
+    "sections": {
+      "header": {
+        "type": "header",
+        "settings": {
+          "main_linklist": "main-menu"
+        }
+      },
+      "homepage-carousel": {
+        "type": "homepage-carousel",
+        "blocks": {
+          "sliders_FXKL7B": {
+            "type": "sliders",
+            "settings": {
+              "sliders": "shopify:\/\/shop_images\/1_b97e3212-59d7-4eeb-9403-579119ea1cd0.webp"
+            }
+          },
+          "sliders_6zEyUU": {
+            "type": "sliders",
+            "settings": {
+              "sliders": "shopify:\/\/shop_images\/3_6ab3119f-77ad-48a6-91f6-3550c9267b7f.webp"
+            }
+          },
+          "sliders_MRQHdW": {
+            "type": "sliders",
+            "settings": {
+              "sliders": "shopify:\/\/shop_images\/2_192d7826-2e94-4051-86c2-e2bc948589bc.webp"
+            }
+          }
+        },
+        "block_order": [
+          "sliders_FXKL7B",
+          "sliders_6zEyUU",
+          "sliders_MRQHdW"
+        ],
+        "settings": {
+        }
+      },
+      "product-category-banners": {
+        "type": "product-category-banners",
+        "blocks": {
+          "collections_B6qLz7": {
+            "type": "collections",
+            "settings": {
+              "category_top_left_header": "Dresses",
+              "category_top_left_text": "Sale!",
+              "category_top_left": "shopify:\/\/shop_images\/1_66f79bcf-7d3e-48f8-b3a2-43077a125183.webp",
+              "category_top_left_url": ""
+            }
+          },
+          "collections_yAatBx": {
+            "type": "collections",
+            "settings": {
+              "category_top_left_header": "Dresses",
+              "category_top_left_text": "Sale!",
+              "category_top_left": "shopify:\/\/shop_images\/2_a574a49f-10b2-45c1-98df-f6b8c6bd8193.webp",
+              "category_top_left_url": ""
+            }
+          },
+          "collections_bYyg89": {
+            "type": "collections",
+            "settings": {
+              "category_top_left_header": "Kids Pent",
+              "category_top_left_text": "Sale!",
+              "category_top_left": "shopify:\/\/shop_images\/1_bc973ebb-cd43-4092-8e6d-47be20fe0cd4.jpg",
+              "category_top_left_url": ""
+            }
+          },
+          "collections_xpVwnC": {
+            "type": "collections",
+            "settings": {
+              "category_top_left_header": "tShart",
+              "category_top_left_text": "Sale!",
+              "category_top_left": "shopify:\/\/shop_images\/2_d4a9266d-4cec-446b-83b6-69b57f25a491.webp",
+              "category_top_left_url": ""
+            }
+          }
+        },
+        "block_order": [
+          "collections_B6qLz7",
+          "collections_yAatBx",
+          "collections_bYyg89",
+          "collections_xpVwnC"
+        ],
+        "settings": {
+          "collections_title": "PRODUCT CATEGORY"
+        }
+      },
+      "homepage-products": {
+        "type": "homepage-products",
+        "settings": {
+          "title": "Trending Products",
+          "collection": "dress",
+          "product_limit": 6
+        }
+      },
+      "newsletter": {
+        "type": "newsletter",
+        "settings": {
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "blocks": {
+          "text_9QLhXe": {
+            "type": "text",
+            "settings": {
+              "footer_text": "Products",
+              "footer_link": "shopify:\/\/collections\/all"
+            }
+          },
+          "text_V8ppet": {
+            "type": "text",
+            "settings": {
+              "footer_text": "News",
+              "footer_link": "shopify:\/\/blogs\/news"
+            }
+          },
+          "text_e3QAhX": {
+            "type": "text",
+            "settings": {
+              "footer_text": "Collections",
+              "footer_link": "shopify:\/\/collections"
+            }
+          },
+          "text_7njWJB": {
+            "type": "text",
+            "settings": {
+              "footer_text": "Contact",
+              "footer_link": "shopify:\/\/pages\/contact"
+            }
+          }
+        },
+        "block_order": [
+          "text_9QLhXe",
+          "text_V8ppet",
+          "text_e3QAhX",
+          "text_7njWJB"
+        ],
+        "settings": {
+          "facebook": "",
+          "instagram": "",
+          "pinterest": "",
+          "twitter": ""
+        }
+      },
+      "image-with-text": {
+        "type": "image-with-text",
+        "blocks": {
+          "half_text_half_media_fLdeqJ": {
+            "type": "half_text_half_media",
+            "settings": {
+              "media_positions": "left",
+              "image": "shopify:\/\/shop_images\/1_58f7e86a-53fe-4f18-8d44-d5c361af3b63.webp",
+              "video_url": "",
+              "subheading": "NEW COLLECTION",
+              "heading": "Jungleries",
+              "introtext_rich": "Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.",
+              "button_url": "shopify:\/\/collections"
+            }
+          },
+          "half_text_half_media_Nzmbwp": {
+            "type": "half_text_half_media",
+            "settings": {
+              "media_positions": "right",
+              "image": "shopify:\/\/shop_images\/2_07dda1a1-cdf6-4f7e-a548-b831a9f90705.webp",
+              "video_url": "_9VUPq3SxOc",
+              "subheading": "NEW COLLECTION",
+              "heading": "Elegant & Sexy",
+              "introtext_rich": "Maxime placeat facere possimus voluptas assumenda sed quia non numquam eius modi tempora incidunt.",
+              "button_url": "shopify:\/\/collections\/all"
+            }
+          }
+        },
+        "block_order": [
+          "half_text_half_media_fLdeqJ",
+          "half_text_half_media_Nzmbwp"
+        ],
+        "settings": {
+        }
+      },
+      "review-with-slider": {
+        "type": "review-with-slider",
+        "blocks": {
+          "review_tDGwm3": {
+            "type": "review",
+            "settings": {
+              "review_image": "shopify:\/\/shop_images\/green-t-shirt.jpg",
+              "rating_image": "shopify:\/\/shop_images\/Shopify-Logo.png",
+              "review_name": "Dave L.",
+              "verified_customer": "Verified Buyer",
+              "sub_heading": "Performance Pants",
+              "rating_heading": "Comfiest pants ever!!",
+              "review_content": "Lorem ipsum dolor sit amet consectetur. Suspendisse facilisi est fermentum proin at mi dolor. Semper ante felis nulla ullamcorper cras. Tellus tellus tellus tempor scelerisque nisi venenatis odio.",
+              "review_button_text": "SHOP THIS STYLE",
+              "review_button_link": ""
+            }
+          },
+          "review_FDd6i3": {
+            "type": "review",
+            "settings": {
+              "review_image": "shopify:\/\/shop_images\/distressed-kids-jeans.jpg",
+              "rating_image": "shopify:\/\/shop_images\/Shopify-Logo.png",
+              "review_name": "Dave L.",
+              "verified_customer": "Verified Buyer",
+              "sub_heading": "Performance Pants",
+              "rating_heading": "Comfiest pants ever!!",
+              "review_content": "Lorem ipsum dolor sit amet consectetur. Suspendisse facilisi est fermentum proin at mi dolor. Semper ante felis nulla ullamcorper cras. Tellus tellus tellus tempor scelerisque nisi venenatis odio.",
+              "review_button_text": "SHOP THIS STYLE",
+              "review_button_link": "shopify:\/\/pages\/contact"
+            }
+          },
+          "review_Gddf9d": {
+            "type": "review",
+            "settings": {
+              "review_image": "shopify:\/\/shop_images\/kids-beanie.jpg",
+              "rating_image": "shopify:\/\/shop_images\/Shopify-Logo.png",
+              "review_name": "sdfsd",
+              "verified_customer": "fsdf",
+              "sub_heading": "sdfsd",
+              "rating_heading": "dsfsd",
+              "review_content": "dsfds",
+              "review_button_text": "sdfs",
+              "review_button_link": ""
+            }
+          }
+        },
+        "block_order": [
+          "review_tDGwm3",
+          "review_FDd6i3",
+          "review_Gddf9d"
+        ],
+        "settings": {
+          "heading": "Review Section"
+        }
+      },
+      "blog-list": {
+        "type": "blog-list",
+        "settings": {
+          "title": "Blog posts",
+          "blog": "news",
+          "post_limit": 6,
+          "blog_show_date": true
+        }
+      },
+      "hero-video": {
+        "type": "hero-video",
+        "settings": {
+          "video_URL": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/8a8e7b08ddff4a0ea62e08f90aeffe22.mp4",
+          "banner_image": "shopify:\/\/shop_images\/hero-bg.jpg"
+        }
+      }
+    },
+    "content_for_index": [
+
+    ]
+  }
+}

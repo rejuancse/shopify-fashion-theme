@@ -1,0 +1,31 @@
+{%- if search.results_count > 0 -%}
+    <div class="search-result">
+        <h2>Products</h2>
+        {%- for item in search.results limit:3 -%}
+            {%- if item.type != 'header' and item.type != 'footer' -%}
+                <div class="search-item">
+                    <a href="{{ item.url }}">
+                        <div class="product-img">
+                            {% if item.featured_image.src %}
+                                <img class="img-responsive" src="{{item.featured_image.src | img_url: '72x'}}">
+                            {% endif %}
+                        </div>
+
+                        <div class="product-info">
+                            <h4>{{ item.title }}</h4>
+                            <p class="price">
+                                {% if item.compare_at_price and item.compare_at_price != item.price %}
+                                    <span class="primary-price">{{item.price | money}}</span> {{ item.compare_at_price | money}}
+                                {% else %}
+                                    {{item.price | money}}
+                                {% endif %}
+                            </p>
+                        </div>
+                    </a>
+                </div>
+            {%- endif -%}
+        {%- endfor -%}
+    </div>
+{%- else -%}
+    <p>No results found</p>
+{%- endif -%}

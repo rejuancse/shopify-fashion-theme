@@ -1,0 +1,210 @@
+<section class="top-header">
+
+    <div id="searchOpen" class="search-popup">
+        <form id="ajax-search-form" method="get">
+            <input type="text" id="searchInput" placeholder="Search...">
+        </form>
+
+        <span>
+            <svg id="searchClose" class="icon icon-close" fill="#000000" height="30px" width="30px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                viewBox="0 0 490 490" xml:space="preserve">
+                <polygon points="11.387,490 245,255.832 478.613,490 489.439,479.174 255.809,244.996 489.439,10.811 478.613,0 245,234.161
+                11.387,0 0.561,10.811 234.191,244.996 0.561,479.174 "/>
+            </svg>
+        </span>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-xs-12 col-sm-4">
+                <div class="contact-number">
+                    <i class="fa fa-phone"></i>
+                    <span>0129- 12323-123123</span>
+                </div>
+            </div>
+
+            <!-- Site Logo -->
+            <div class="col-md-4 col-xs-12 col-sm-4">
+                <div class="logo text-center">
+                    <a href="/">
+                        <svg width="205px" height="29px" viewBox="0 0 155 29" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" font-size="40" font-family="AustinBold, Austin" font-weight="bold">
+                                <g id="Group" transform="translate(-108.000000, -297.000000)" fill="#000000">
+                                <text id="fashion">
+                                    <tspan x="108.94" y="325">FASHION</tspan>
+                                </text>
+                                </g>
+                            </g>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-xs-12 col-sm-4">
+                <ul class="top-menu list-inline float-right">
+                    <li class="list-inline-item">
+                        <span>
+                            <svg id="searchpopup" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 34 34" fill="none" class="modal__toggle-open icon icon-search" aria-hidden="true" focusable="false">
+                                <path d="M19.1421 20.5142L25.8073 27.1793" stroke="#000924" stroke-width="1.65566"></path>
+                                <circle cx="14.6987" cy="13.8495" r="7.50364" stroke="#000924" stroke-width="1.65566"></circle>
+                            </svg>
+                        </span>
+                    </li>
+
+                    <div id="cart">
+                        {% include 'icon-cart' %}
+                    </div>
+
+
+                    {% if shop.customer_accounts_enabled %}
+                        {% if customer %}
+                            <li class="list-inline-item"><a href="/account"><i class="fa fa-user"></i>Your Account</a></li>
+                            <li class="list-inline-item"><a href="/account"><i class="fa fa-sign-out"></i>Sign out</a></li>
+                        {% else %}
+                            <li class="list-inline-item"><a href="/account/login"><i class="fa fa-sign-in"></i>Login</a></li>
+                        {% endif %}
+                    {% endif %}
+
+
+                </ul>
+            </div>
+        </div>
+
+
+    </div>
+</section>
+
+<div id="searchGroup" class="search__result-group">
+    <div id="suggestions"></div>
+    <div id="searchResults"></div>
+</div>
+
+{% include 'menu' %}
+
+{% schema %}
+    {
+        "name": "Main Menu",
+        "settings": [
+            {
+                "type": "link_list",
+                "id": "main_linklist",
+                "label": "Menu",
+                "default": "main-menu"
+            }
+        ]
+    }
+{% endschema %}
+
+<style>
+    .search__result-group {
+        margin: 0 auto;
+        width: 1140px;
+        background: #fff;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 50px;
+        box-shadow: 0 4px 3px rgb(0 0 0 / 10%);
+        padding: 30px;
+        display: none;
+    }
+    .search__result-group.active {
+        display: grid;
+    }
+
+    .top-header .float-right {
+        display: flex;
+        align-items: center;
+    }
+
+
+    section.top-header {
+        position: relative;
+    }
+    .search-popup {
+        width: 100%;
+        background: #fff;
+        position: absolute;
+        min-height: 120px;
+    }
+
+    li.list-inline-item span {
+        display: block;
+        line-height: 0;
+        cursor: pointer;
+    }
+
+    .search-popup {
+        width: 1140px;
+        background: #fff;
+        position: absolute;
+        min-height: 120px;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 9;
+        display: none;
+        opacity: 0;
+        visibility: hidden;
+        align-items: center;
+    }
+
+    .search-popup.active {
+        display: flex;
+        opacity: 1;
+        visibility: visible;
+        border-bottom: 1px solid #dfe3e8;
+    }
+
+    span.icon.icon--cart {
+        position: relative;
+    }
+
+    .icon.icon--cart .fa.fa-shopping-cart {
+        font-size: 22px;
+    }
+
+    span.site-header__cart-count {
+        position: absolute;
+        top: -8px;
+        right: -20px;
+        width: 20px;
+        height: 20px;
+        background: #000;
+        border-radius: 50%;
+        line-height: 0;
+        padding: 10px 0;
+        text-align: center;
+        color: #fff;
+        font-size: 12px;
+    }
+
+    form#ajax-search-form {
+        width: 97%;
+        display: flex;
+    }
+    .search-popup input {
+        width: 100%;
+    }
+    button.search-modal__close-button.modal__close-button.link.link--text.focus-inset {
+        width: 30px;
+        height: 30px;
+    }
+    button.search-modal__close-button.modal__close-button.link.link--text.focus-inset svg {
+        width: 30px;
+        height: 30px;
+    }
+    .search-popup input {
+        width: 100%;
+        border: none;
+        font-size: 22px;
+    }
+    .search-popup input:focus {
+        border: none;
+    }
+    svg#searchClose {
+        cursor: pointer;
+        width: 30px;
+        height: 30px;
+        overflow: hidden;
+    }
+</style>

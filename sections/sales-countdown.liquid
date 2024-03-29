@@ -1,0 +1,121 @@
+<div class="sales-info">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5">
+                <h2>{{ section.settings.heading }}</h2>
+                <p>{{ section.settings.subheading }}</p>
+            </div>
+            <div class="col-md-5">
+                <ul id="demo" data-dateValue="{{ section.settings.date_picker | date: "%m %d, %Y" }}">
+                    <li class="circle">
+                        <span class="days"></span>
+                        Days
+                    </li>
+                    <li class="circle">
+                        <span class="hours"></span>
+                        Hours
+                    </li>
+                    <li class="circle">
+                        <span class="minutes"></span>
+                        Minutes
+                    </li>
+                    <li class="circle">
+                        <span class="seconds"></span>
+                        Seconds
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-2">
+                <div class="shop-link">
+                    <a href="{{ section.settings.btn_url }}" class="btn btn-primary">Show Now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% schema %}
+    {
+        "name": "Sales CountDown",
+        "settings": [
+            {
+                "type": "text",
+                "id": "heading",
+                "label": "Heading",
+                "default": "GET 20% OFFF ALL SALE ITEMS"
+            },
+            {
+                "type": "text",
+                "id": "subheading",
+                "label": "Sub Heading",
+                "default": "Use code DECEMBER at checkout"
+            },
+            {
+                "type": "text",
+                "id": "date_picker",
+                "label": "Choose date",
+                "default": "12-24-2024",
+                "info": "e.g. mm-dd-yyyy"
+            },
+            {
+                "type": "url",
+                "id": "btn_url",
+                "label": "Select Link"
+            }
+        ]
+    }
+{% endschema %}
+
+<style>
+    .sales-info {
+        padding: 60px 0;
+    }
+    .sales-info h2{
+        font-size: 24px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+    .sales-info p{
+        padding: 0;
+        margin: 0;
+    }
+    .sales-info .row {
+        align-items: center;
+    }
+    .sales-info #demo {
+        display: inline-block;
+        list-style: none;
+        margin: 0;
+        text-align: center;
+        width: 100%;
+    }
+    .sales-info .circle {
+        display: inline-block;
+        text-align: center;
+        padding: 0 20px;
+        font-family: "Poppins", sans-serif;
+        color: #757575;
+        font-size: 15px;
+    }
+    .sales-info .circle span {
+        display: block;
+        font-size: 26px;
+        line-height: 26px;
+        font-weight: 500;
+        color: #212529;
+    }
+    .sales-info .shop-link {
+        text-align: right;
+    }
+    .sales-info .btn-primary {
+        color: #fff;
+        background-color: #293355;
+        border-color: #293355;
+        border-radius: 0;
+        padding: 8px 20px;
+    }
+    .sales-info .btn-primary:hover {
+        background-color: #000;
+        border-color: #000;
+    }
+</style>
