@@ -1,5 +1,4 @@
 <section class="top-header">
-
     <div id="searchOpen" class="search-popup">
         <form id="ajax-search-form" method="get">
             <input type="text" id="searchInput" placeholder="Search...">
@@ -55,7 +54,6 @@
                         {% include 'icon-cart' %}
                     </div>
 
-
                     {% if shop.customer_accounts_enabled %}
                         {% if customer %}
                             <li class="list-inline-item"><a href="/account"><i class="fa fa-user"></i>Your Account</a></li>
@@ -64,13 +62,9 @@
                             <li class="list-inline-item"><a href="/account/login"><i class="fa fa-sign-in"></i>Login</a></li>
                         {% endif %}
                     {% endif %}
-
-
                 </ul>
             </div>
         </div>
-
-
     </div>
 </section>
 
@@ -95,6 +89,17 @@
     }
 {% endschema %}
 
+<script>
+    function headerCartPopup() {
+        var x = document.getElementById("header-cart-popup");
+        if (x.style.display === "none") {
+            x.style.display = "block";
+        } else {
+            x.style.display = "none";
+        }
+    }
+</script>
+
 <style>
     .search__result-group {
         margin: 0 auto;
@@ -116,10 +121,10 @@
         align-items: center;
     }
 
-
     section.top-header {
         position: relative;
     }
+
     .search-popup {
         width: 100%;
         background: #fff;
@@ -137,7 +142,7 @@
         width: 1140px;
         background: #fff;
         position: absolute;
-        min-height: 120px;
+        min-height: 110px;
         left: 50%;
         top: 50%;
         transform: translate(-50%, -50%);
@@ -166,7 +171,7 @@
     span.site-header__cart-count {
         position: absolute;
         top: -8px;
-        right: -20px;
+        right: -10px;
         width: 20px;
         height: 20px;
         background: #000;
@@ -182,25 +187,31 @@
         width: 97%;
         display: flex;
     }
+
     .search-popup input {
         width: 100%;
     }
+
     button.search-modal__close-button.modal__close-button.link.link--text.focus-inset {
         width: 30px;
         height: 30px;
     }
+
     button.search-modal__close-button.modal__close-button.link.link--text.focus-inset svg {
         width: 30px;
         height: 30px;
     }
+
     .search-popup input {
         width: 100%;
         border: none;
         font-size: 22px;
     }
+
     .search-popup input:focus {
         border: none;
     }
+
     svg#searchClose {
         cursor: pointer;
         width: 30px;

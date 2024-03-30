@@ -254,6 +254,34 @@
           "video_URL": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/8a8e7b08ddff4a0ea62e08f90aeffe22.mp4",
           "banner_image": "shopify:\/\/shop_images\/hero-bg.jpg"
         }
+      },
+      "announcement-bar": {
+        "type": "announcement-bar",
+        "blocks": {
+          "announcement_cwAKHh": {
+            "type": "announcement",
+            "settings": {
+              "text": "<p>Welcome to our store<\/p>",
+              "bg_color": "#fff",
+              "text_color": "#000"
+            }
+          }
+        },
+        "block_order": [
+          "announcement_cwAKHh"
+        ],
+        "settings": {
+          "text_align": "text-left"
+        }
+      },
+      "sales-countdown": {
+        "type": "sales-countdown",
+        "settings": {
+          "heading": "GET 20% OFFF ALL SALE ITEMS",
+          "subheading": "Use code DECEMBER at checkout",
+          "date_picker": "12-24-2024",
+          "btn_url": ""
+        }
       }
     },
     "content_for_index": [

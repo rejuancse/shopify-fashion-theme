@@ -268,70 +268,9 @@ var x = setInterval(function() {
     }
 }, 1000);
 
-
 /**
  *  Shopify ajax search
  * */
-// document.getElementById('searchInput').addEventListener('input', function() {
-//     var query = this.value;
-//     if (query.length > 0) {
-//         searchProducts(query);
-//     } else {
-//         document.getElementById('searchResults').innerHTML = ''; // Clear results if search query is empty
-//     }
-// });
-
-// function searchProducts(query) {
-//     fetch('/search?q=' + query)
-//         .then(response => response.text())
-//         .then(html => {
-//             // Create a temporary element to parse the HTML response
-//             var tempElement = document.createElement('div');
-//             tempElement.innerHTML = html;
-
-//             // Exclude header and footer elements from the search results
-//             var searchResults = tempElement.querySelectorAll('.search-result');
-
-//             // Clear previous results
-//             document.getElementById('searchResults').innerHTML = '';
-
-//             // Inject filtered search results into the DOM
-//             searchResults.forEach(result => {
-//                 document.getElementById('searchResults').appendChild(result);
-//             });
-//         })
-//         .catch(error => console.error('Error:', error));
-// }
-
-// // Function to fetch search suggestions
-// function fetchSuggestions(query) {
-//     fetch('/search/suggestions?q=' + query) // Endpoint to handle suggestion requests
-//         .then(response => response.json()) // Assuming the response is in JSON format
-//         .then(data => {
-//             // Update UI with suggestions
-//             displaySuggestions(data.suggestions);
-//         })
-//         .catch(error => console.error('Error fetching suggestions:', error));
-// }
-
-// // Function to display search suggestions
-// function displaySuggestions(suggestions) {
-//     var suggestionsList = document.getElementById('suggestionsList');
-//     suggestionsList.innerHTML = ''; // Clear previous suggestions
-
-//     suggestions.forEach(suggestion => {
-//         var suggestionItem = document.createElement('li');
-//         suggestionItem.textContent = suggestion;
-//         suggestionsList.appendChild(suggestionItem);
-//     });
-
-//     // Show the suggestions dropdown
-//     suggestionsList.style.display = 'block';
-// }
-
-
-
-
 document.getElementById('searchInput').addEventListener('input', function() {
     var query = this.value;
     var element = document.getElementById("searchGroup");

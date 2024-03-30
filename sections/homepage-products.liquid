@@ -24,14 +24,14 @@
                             </a>
 
                             <div class="preview-meta EEr">
-                                {% comment %} <form method="post" action="/cart/add"> {% endcomment %}
+                                <form method="post" action="/cart/add">
                                     <input name="id" value="{{ product.variants.first.id }}" type="hidden" />
                                     <input name="add" value="ADD TO CART" type="submit" class="btn btn-main add-to-cart" />
-                                {% comment %} </form> {% endcomment %}
+                                </form>
 
+                                {% comment %}
                                 <a href="/cart/add?id={{ product.variants.first.id }}" class="add-to-cart">Add to Cart</a>
-                                <button class="add-to-cart-btn" data-product-id="{{ product.id }}">Add to Cart</button>
-
+                                <button class="add-to-cart-btn" data-product-id="{{ product.id }}">Add to Cart</button> {% endcomment %}
                             </div>
                         </div>
 
@@ -47,7 +47,7 @@
                             </p>
                         </div>
 
-                        {% unless product.has_only_default_variant %}
+                        {% comment %} {% unless product.has_only_default_variant %}
                             {% for product_option in product.options_with_values %}
                                 <div class="product-category">
                                     <span>{{product_option.name}}</span>
@@ -58,7 +58,7 @@
                                     </select>
                                 </div>
                             {% endfor %}
-                        {% endunless %}
+                        {% endunless %} {% endcomment %}
                     </div>
                 </div>
             {% endfor %}

@@ -33,7 +33,11 @@
   {{ 'style.scss' | asset_url | stylesheet_tag }}
 </head>
 <body>
+
+    {% section 'announcement-bar' %}
     {% section 'header' %}
+    {% render 'cart-drawer' %}
+
     {{ content_for_layout }}
     {% section 'footer' %}
 
